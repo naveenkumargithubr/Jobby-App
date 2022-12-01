@@ -145,7 +145,7 @@ class Jobs extends Component {
       </p>
       <button
         type="button"
-        //  testid="button"
+        testid="searchButton"
         className="jobs-failure-button"
         onClick={this.getJobs}
       >
@@ -154,9 +154,8 @@ class Jobs extends Component {
     </div>
   )
 
-  // testid="loader"
   renderLoadingView = () => (
-    <div className="loader-container">
+    <div className="loader-container" testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
@@ -225,7 +224,7 @@ class Jobs extends Component {
                 />
                 <button
                   type="button"
-                  // testid="searchButton"
+                  testid="searchButton"
                   className="large-search-button-container"
                   onClick={this.getJobs}
                 >

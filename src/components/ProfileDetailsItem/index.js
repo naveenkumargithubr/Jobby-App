@@ -53,8 +53,8 @@ class ProfileDetailsItem extends Component {
     return (
       <div className="success-View-container">
         <img src={profileImageUrl} alt="profile" className="profile-logo" />
-        <h1 className="prof-heading">Naveen kumar</h1>
-        <p className="prof-bio">Full Stack Web Developer</p>
+        <h1 className="prof-heading">{name}</h1>
+        <p className="prof-bio">{shortBio}</p>
       </div>
     )
   }
@@ -63,7 +63,7 @@ class ProfileDetailsItem extends Component {
     <div className="profile-error-view-container">
       <button
         type="button"
-        // testid="button"
+        testid="button"
         className="profile-failure-button"
         onClick={this.getProfile}
       >
@@ -72,9 +72,8 @@ class ProfileDetailsItem extends Component {
     </div>
   )
 
-  // testid="loader"
   renderLoadingView = () => (
-    <div className="profile-loader-container">
+    <div className="profile-loader-container" testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
