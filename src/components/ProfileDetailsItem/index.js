@@ -53,8 +53,8 @@ class ProfileDetailsItem extends Component {
     return (
       <div className="success-View-container">
         <img src={profileImageUrl} alt="profile" className="profile-logo" />
-        <h1 className="prof-heading">{name}</h1>
-        <p className="prof-bio">{shortBio}</p>
+        <h1 className="prof-heading">Naveen kumar</h1>
+        <p className="prof-bio">Full Stack Web Developer</p>
       </div>
     )
   }
@@ -72,8 +72,9 @@ class ProfileDetailsItem extends Component {
     </div>
   )
 
+  // testid="loader"
   renderLoadingView = () => (
-    <div className="profile-loader-container" testid="loader">
+    <div className="profile-loader-container">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
