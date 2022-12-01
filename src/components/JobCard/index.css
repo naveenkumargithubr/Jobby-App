@@ -1,0 +1,139 @@
+.job-item-list-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #202020;
+  padding: 25px;
+  margin-top: 10px;
+  margin-left: 15px;
+  border-radius: 10px;
+}
+
+.company-logo-title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.company-logo {
+  height: 80px;
+  width: 70px;
+}
+
+.title-rating-container {
+  padding-left: 35px;
+}
+
+.link-item {
+  text-decoration: none;
+}
+
+.all-jobs-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.rating-start-icon {
+  color: #fbbf24;
+  height: 18px;
+  width: 18px;
+}
+
+.rating-heading {
+  font-family: 'Roboto';
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.location-package-emptype-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location-employee-container {
+  display: flex;
+  align-items: center;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+}
+
+.employee-type-container {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.location-icon {
+  color: #ffffff;
+  height: 24px;
+  width: 24px;
+}
+
+.location-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 500;
+  padding-left: 5px;
+}
+
+.brief-case-icon {
+  color: #ffffff;
+  height: 24px;
+  width: 24px;
+}
+
+.employee-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 500;
+  padding-left: 8px;
+}
+
+.package-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.horizantal-line {
+  width: 100%;
+  color: #7e858e;
+}
+
+.desc-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 0px;
+}
+
+.desc-text {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 300;
+}

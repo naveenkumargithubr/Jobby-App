@@ -1,0 +1,27 @@
+.success-View-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  width: 100%;
+  max-width: 260px;
+  height: 175px;
+  margin-bottom: 28px;
+  border-radius: 20px;
+  background-size: cover;
+  padding: 30px;
+}
+
+.profile-logo {
+  width: 50px;
+}
+
+.prof-heading {
+  font-family: 'Roboto';
+  font-size: 17px;
+  color: #6366f1;
+}
+
+.prof-bio {
+  font-family: 'Roboto';
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}

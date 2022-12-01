@@ -1,0 +1,131 @@
+.filters-group-container {
+  margin-top: 30px;
+  margin: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .filters-group-container {
+    width: 50%;
+    max-width: 300px;
+    min-width: 240px;
+    margin-top: 48px;
+    flex-shrink: 0;
+    margin-left: 0px;
+  }
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 1px solid #7e858e;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .search-input-container {
+    display: none;
+  }
+}
+
+.search-input-bar {
+  background-color: black;
+  padding: 10px 16px 10px 16px;
+  outline: none;
+  border: none;
+  flex-grow: 1;
+  font-size: 14px;
+  font-family: 'Roboto';
+  color: #cbd5e1;
+}
+
+.search-icon {
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+}
+
+.button-container {
+  background-color: transparent;
+  color: #64748b;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.horizontal-line {
+  background-color: #475569;
+  width: 100%;
+}
+
+.employment-container {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.employment-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 22px;
+}
+.employee-list-container {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.employee-list-item {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.checkbox-input {
+  height: 16px;
+  width: 16px;
+}
+
+.checkbox-label {
+  padding-left: 10px;
+}
+
+.salary-range-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.salary-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.salary-list-item {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.salary-list-container {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.check-radio-input {
+  height: 16px;
+  width: 16px;
+}
+
+.check-radio-label {
+  padding-left: 10px;
+}

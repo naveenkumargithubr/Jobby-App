@@ -1,0 +1,106 @@
+.login-container {
+  background-image: url('https://prmceam.ac.in/wp-content/uploads/2017/05/background-learner1.jpg');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  background-size: cover;
+}
+
+.logo-head-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 320px;
+  background-image: url('https://wallpaperaccess.com/full/1900880.jpg');
+}
+
+@media screen and (min-width: 768px) {
+  .logo-head-container {
+    width: 90%;
+    max-width: 620px;
+  }
+}
+
+.website-logo {
+  width: 90px;
+}
+
+@media screen and (min-width: 768px) {
+  .website-logo {
+    width: 180px;
+  }
+}
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 450px;
+}
+
+@media screen and (min-width: 992px) {
+  .submit-form {
+    width: 450px;
+    flex-shrink: 0;
+    padding: 8px 15px 8px 15px;
+  }
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.label {
+  margin-bottom: 0px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.user-input-field {
+  font-size: 15px;
+  height: 40px;
+  border: 1px solid #eee6e6;
+  background-color: transparent;
+  color: #e4e2e2;
+  border-radius: 6px;
+  margin-top: 5px;
+  padding: 8px 16px 8px 16px;
+  outline: none;
+}
+
+.login-button {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 16px;
+  color: #fffdfd;
+  height: 40px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  background-color: #2d2979;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.error-msg {
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: #ff0b37;
+}
