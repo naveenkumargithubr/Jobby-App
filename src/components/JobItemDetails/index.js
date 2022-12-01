@@ -184,7 +184,7 @@ class JobItemDetails extends Component {
   }
 
   renderLoaderView = () => (
-    <div className="loader-container">
+    <div className="loader-container" testid="loader">
       <Loader type="ThreeDots" color="#ffffff" width={50} height={50} />
     </div>
   )
