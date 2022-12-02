@@ -11,12 +11,15 @@ class LoginForm extends Component {
     errorMsg: '',
   }
 
+  // when submit is success then jwtToken is genarated 
   onSubmitSuccess = jwTtoken => {
-    Cookies.set('jwt_token', jwTtoken, {expires: 30})
+    Cookies.set('jwt_token', jwTtoken, {expires: 30}) // here we set the jwtToken expiration
     const {history} = this.props
-    history.replace('/')
-  }
+    history.replace('/') // if its token is genarated successfully then navigated to home page
+  } 
 
+  
+  // when unAuthorized user is trying to access then showing error message
   onSubmitFailure = errorMsg => {
     console.log(errorMsg)
     this.setState({
@@ -25,6 +28,7 @@ class LoginForm extends Component {
     })
   }
 
+  // here we make the post api call
   onSubmitForm = async event => {
     event.preventDefault()
     const {username, password} = this.state
@@ -35,6 +39,7 @@ class LoginForm extends Component {
       body: JSON.stringify(userDetails),
     }
 
+    // recieving the response 
     const response = await fetch(apiUrl, options)
     console.log(response)
     const data = await response.json()
@@ -46,10 +51,13 @@ class LoginForm extends Component {
     }
   }
 
+  
+  // updating the usernamefield
   onChangeUsername = event => {
     this.setState({username: event.target.value})
   }
 
+  //updating the password feild
   onChangePassword = event => {
     this.setState({password: event.target.value})
   }
@@ -96,6 +104,7 @@ class LoginForm extends Component {
     const {showSubmitError, errorMsg} = this.state
     const token = Cookies.get('jwt_token')
 
+    // if the user is defined the navigate to home page (jwtToke is have)
     if (token !== undefined) {
       return <Redirect to="/" />
     }
@@ -114,7 +123,7 @@ class LoginForm extends Component {
             <button className="login-button" type="submit">
               Login
             </button>
-            {showSubmitError && <p className="error-msg">* {errorMsg}</p>}
+            {showSubmitError && <p className="error-msg">* {errorMsg}</p>} // showing the error field
           </form>
         </div>
       </div>
