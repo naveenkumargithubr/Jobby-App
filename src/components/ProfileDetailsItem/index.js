@@ -21,15 +21,17 @@ class ProfileDetailsItem extends Component {
   }
 
   getProfile = async () => {
-    this.setState({apiStatus: apiStatusConstants.inProgress})
+    this.setState({apiStatus: apiStatusConstants.inProgress}) // when user click on the link loader is displayed
     const token = Cookies.get('jwt_token')
     const apiUrl = 'https://apis.ccbp.in/profile'
     const options = {
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`, // here we send the token to server for authentication 
       },
       method: 'GET',
     }
+    
+    //here we get the response from server 
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
       const data = await response.json()
@@ -47,6 +49,7 @@ class ProfileDetailsItem extends Component {
     }
   }
 
+  // render success view
   renderSuccessView = () => {
     const {profileData} = this.state
     const {name, profileImageUrl, shortBio} = profileData
@@ -59,6 +62,7 @@ class ProfileDetailsItem extends Component {
     )
   }
 
+ // render failure view
   renderFailureView = () => (
     <div className="profile-error-view-container">
       <button
@@ -72,6 +76,7 @@ class ProfileDetailsItem extends Component {
     </div>
   )
 
+  // render in progress loading view
   renderLoadingView = () => (
     <div className="profile-loader-container" testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
