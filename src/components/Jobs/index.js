@@ -62,19 +62,25 @@ class Jobs extends Component {
     searchInput: '',
   }
 
+  
+  //make the api request 
   componentDidMount() {
     this.getJobs()
   }
 
+  //implementing the api request
   getJobs = async () => {
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
     })
     const {employeeType, minimumSalary, searchInput} = this.state
+    // here we pass the query parameters to the apiUrl 
     const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${employeeType.join()}&minimum_package=${minimumSalary}&search=${searchInput}`
 
+    // get the jwtToken 
     const jwtToken = Cookies.get('jwt_token')
 
+    // sending the authorization key 
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -84,6 +90,8 @@ class Jobs extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
       const data = await response.json()
+  
+      // here we convert the snakecase to camelCase and updating the data
       const updatedJobsData = data.jobs.map(eachJob => ({
         companyLogoUrl: eachJob.company_logo_url,
         employmentType: eachJob.employment_type,
@@ -96,18 +104,18 @@ class Jobs extends Component {
       }))
       this.setState({
         jobsList: updatedJobsData,
-        apiStatus: apiStatusConstants.success,
+        apiStatus: apiStatusConstants.success, // if its success jobsList is displayed
       })
     } else {
       this.setState({
-        apiStatus: apiStatusConstants.failure,
+        apiStatus: apiStatusConstants.failure, // if its failure failure img is displayed
       })
     }
   }
 
   renderJobsSuccessList = () => {
     const {jobsList} = this.state
-    const renderJobsList = jobsList.length > 0
+    const renderJobsList = jobsList.length > 0 // if length is greater than the 0 jobs list is displayed else no jobs img is dispalyed
 
     return renderJobsList ? (
       <div className="all-jobs-container">
@@ -175,20 +183,26 @@ class Jobs extends Component {
     }
   }
 
+  
+  // whenever user enters the letters from the keyboard its will be updated 
   changeSearchInput = event => {
     this.setState({searchInput: event.target.value})
   }
 
+  // if user serach the letters and enter key is pressed corresponding details will be displayed
   onEnterSearchInput = event => {
     if (event.key === 'Enter') {
       this.getJobs()
     }
   }
 
+  
+  // when user select the radio button corresponding salary packages and jobs will be displayed
   changeSalary = salary => {
     this.setState({minimumSalary: salary}, this.getJobs)
   }
 
+  //here also same when the user click on the checkbox label corresponding job detals are displayed
   changeEmployeeList = type => {
     this.setState(
       prevState => ({employeeType: [...prevState.employeeType, type]}),
@@ -202,7 +216,9 @@ class Jobs extends Component {
       <>
         <Header />
         <div className="all-jobs-container">
-          <div className="jobs-card-content">
+         <div className="jobs-card-content">
+      
+         // display the filter details
             <FiltersGroup
               employmentTypesList={employmentTypesList}
               salaryRangesList={salaryRangesList}
@@ -212,7 +228,9 @@ class Jobs extends Component {
               changeSalary={this.changeSalary}
               changeEmployeeList={this.changeEmployeeList}
             />
-            <div className="input-jobs-search-list-container">
+          
+             // this user input container is for small devices
+              <div className="input-jobs-search-list-container">
               <div className="search-input-large-container">
                 <input
                   type="search"
