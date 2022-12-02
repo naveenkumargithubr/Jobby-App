@@ -4,11 +4,14 @@ import ProfileDetailsItem from '../ProfileDetailsItem'
 import './index.css'
 
 const FiltersGroup = props => {
+  
+  // here we update the searchInput
   const onChangeSearchInput = event => {
     const {changeSearchInput} = props
     changeSearchInput(event)
   }
 
+  // here user is click on the enter button corresponding details is displayed
   const onEnterSearchInput = event => {
     const {getJobs} = props
     if (event.key === 'Enter') {
@@ -40,11 +43,13 @@ const FiltersGroup = props => {
     )
   }
 
+// when user search the jobs the corresponding details will be displayed
   const onSelectEmployeeType = event => {
     const {changeEmployeeList} = props
     changeEmployeeList(event.target.value)
   }
 
+  // list the type of employees
   const renderTypeOfEmployment = () => {
     const {employmentTypesList} = props
     return (
@@ -77,6 +82,7 @@ const FiltersGroup = props => {
     )
   }
 
+  // list the type salary range
   const renderSalaryRange = () => {
     const {salaryRangesList} = props
     return (
