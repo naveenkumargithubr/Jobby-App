@@ -24,10 +24,12 @@ class JobItemDetails extends Component {
     apiStatus: apiStatusConstants.initial,
   }
 
+  // make the apcall 
   componentDidMount() {
     this.getDetailedJobData()
   }
 
+  //here we convert the snakecase letters to camelCase letters (similardata card)
   getFormattedSimilarData = data => ({
     companyLogoUrl: data.company_logo_url,
     employmentType: data.employment_type,
@@ -38,6 +40,8 @@ class JobItemDetails extends Component {
     title: data.title,
   })
 
+  
+  // here also same for (Specific job items)
   getFormattedSpecificData = data => ({
     companyLogoUrl: data.company_logo_url,
     companyWebsiteUrl: data.company_website_url,
@@ -58,13 +62,16 @@ class JobItemDetails extends Component {
     })),
   })
 
+  // implementing the api call 
   getDetailedJobData = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
 
+    // to get the specific item card id from the match props
     const {match} = this.props
     const {params} = match
     const {id} = params
 
+    // getting the jwtToken from Cookies for authentication purpose
     const jwtToken = Cookies.get('jwt_token')
     const url = `https://apis.ccbp.in/jobs/${id}`
     const options = {
@@ -74,10 +81,13 @@ class JobItemDetails extends Component {
       method: 'GET',
     }
 
+    // recieving the response from the server in json string format
     const response = await fetch(url, options)
     if (response.ok === true) {
       const data = await response.json()
       console.log(data)
+      
+      // updating the intial variables
       const updatedData = this.getFormattedSpecificData(data.job_details)
       const updatedSimilarJobsData = data.similar_jobs.map(eachSimilarJob =>
         this.getFormattedSimilarData(eachSimilarJob),
@@ -94,6 +104,8 @@ class JobItemDetails extends Component {
     }
   }
 
+  
+  // render the jobitem success view
   renderJobDetailsSuccessView = () => {
     const {jobSpecificData, similarJobsData} = this.state
     const {
@@ -183,12 +195,14 @@ class JobItemDetails extends Component {
     )
   }
 
+  // inprogress view
   renderLoaderView = () => (
     <div className="loader-container" testid="loader">
       <Loader type="ThreeDots" color="#ffffff" width={50} height={50} />
     </div>
   )
 
+  // failure view
   renderFailureView = () => {
     const {match} = this.props
     const {params} = match
