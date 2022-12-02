@@ -249,7 +249,7 @@ class Jobs extends Component {
                   <BsSearch className="large-search-icon" />
                 </button>
               </div>
-              {this.renderAllJobsList()}
+              {this.renderAllJobsList()} // render all the components
             </div>
           </div>
         </div>
